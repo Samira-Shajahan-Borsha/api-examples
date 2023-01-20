@@ -1,3 +1,13 @@
+const searchBtn = document.getElementById("button-search");
+const searchInput = document.getElementById("search-field");
+
+searchInput.addEventListener("keypress", function(event) {
+    // console.log('keypress triggered', event.key);
+    if (event.key === 'Enter'){
+        searchBtn.click();
+    }
+});
+
 document.getElementById('error-message').style.display = 'none';
 const searchFood = () => {
     const serachField = document.getElementById('search-field');
@@ -24,7 +34,7 @@ const displayError = error => {
 }
 
 const displaySearchResult = meals => {
-    console.log(meals);
+    // console.log(meals);
     const serachResult = document.getElementById('search-result');
     serachResult.textContent = '';
     if (meals.length == 0) {
